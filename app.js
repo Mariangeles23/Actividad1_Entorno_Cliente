@@ -92,7 +92,7 @@ async function iniciar() {
     const datos = await respuesta.json();
     carrito = new Carrito(datos.products, datos.currency);
     mostrar();
-    estado.textContent = "Productos cargados. Usa − y + para cambiar las unidades.";
+    estado.textContent = "Articulos en el carrito.";
   } catch (error) {
     estado.textContent = "No se pudieron cargar los productos: " + error.message;
   }

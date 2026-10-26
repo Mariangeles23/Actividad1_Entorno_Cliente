@@ -6,6 +6,7 @@ body {
   padding: 0 20px;
   font-family: Arial, sans-serif;
   color: #262626;
+  background-color: rgb(241, 241, 230);
 }
 
 header { border-bottom: 1px solid #ddd; }
@@ -14,15 +15,15 @@ h2 { margin-top: 0; font-size: 20px; }
 #estado { min-height: 24px; color: #555; }
 main { display: flex; align-items: flex-start; gap: 30px; }
 section { flex: 1; min-width: 0; overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; }
-th, td { padding: 18px 10px; border-bottom: 1px solid #ddd; text-align: left; }
+table {background: beige; width: 100%; border-collapse: collapse; border-radius: 5%;}
+th, td {  padding: 18px 10px; border-bottom: 1px solid #ddd; text-align: left; }
 th { font-size: 14px; }
 small { display: block; margin-top: 8px; color: #666; }
 .cantidad { white-space: nowrap; }
 button { width: 32px; height: 32px; font-size: 18px; cursor: pointer; }
 input { width: 48px; padding: 7px 3px; text-align: center; }
 .precio, .subtotal { white-space: nowrap; }
-aside { width: 290px; padding: 22px; background: #f3f3f3; }
+aside { width: 290px; padding: 22px; background:  beige; border-radius: 5%;}
 ul { padding: 0; list-style: none; }
 li { margin: 15px 0; }
 .total { display: flex; justify-content: space-between; border-top: 1px solid #aaa; padding-top: 18px; }
