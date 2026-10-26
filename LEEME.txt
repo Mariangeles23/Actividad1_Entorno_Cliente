@@ -1,0 +1,68 @@
+AGOODSHOP - SOLUCIÓN SENCILLA PARA EXPLICAR EN CLASE
+
+EJECUCIÓN EN XAMPP
+1. Copia esta carpeta en C:\xampp\htdocs\agoodshop-simple.
+2. Inicia Apache desde XAMPP. No necesitas MySQL.
+3. Abre http://localhost/agoodshop-simple/.
+No abras index.html con doble clic: fetch necesita el servidor.
+Si Apache utiliza otro puerto, inclúyelo en la URL.
+
+ARCHIVOS
+index.html: estructura de la tabla y del resumen.
+estilos.css: aspecto básico y adaptación a pantallas pequeñas.
+app.js: clase Carrito, funciones del DOM, eventos y petición fetch.
+api.php: API local que devuelve el JSON del enunciado. No tiene base de datos.
+
+POR QUÉ ESTA ES UNA SOLUCIÓN SENCILLA
+Una clase, tres métodos principales, dos funciones para pintar la interfaz
+y una función de inicio. Sin librerías, módulos, almacenamiento ni procesos
+de compra. Las cantidades solo se cambian con los botones − y +.
+Al recargar la página, el carrito vuelve a cero.
+
+ORDEN PARA ENSEÑARLO
+1. Mostrar api.php en el navegador: es la respuesta JSON que recibiremos.
+2. Explicar constructor: cada producto empieza con quantity = 0.
+3. Explicar actualizarUnidades: encuentra el producto por SKU y cambia su cantidad.
+   Math.max evita cantidades negativas. parseInt mantiene unidades enteras.
+4. Explicar obtenerInformacionProducto: devuelve datos y subtotal.
+5. Explicar obtenerCarrito: selecciona productos con unidades y suma subtotales.
+6. Explicar mostrarProductos: crea una fila por producto.
+7. Pulsar + y seguir cambiarCantidad: cambia el modelo y actualiza el DOM.
+8. Explicar mostrarResumen y, finalmente, iniciar con sus dos await.
+
+IDEA PRINCIPAL PARA EL ALUMNADO
+La clase calcula. Las funciones de la vista muestran esos cálculos.
+La clase Carrito no utiliza document ni conoce los elementos HTML.
+
+PRUEBAS RÁPIDAS
+- Inicio: tres productos, todas las cantidades a 0, total 0.00 €.
+- Quitar unidades en 0: se mantiene en 0.
+- Añadir un cargador: total 49.99 €.
+- 3 teléfonos, 2 cargadores y 3 fundas: total 3156.92 €.
+- Volver todo a 0: el resumen vuelve a estar vacío.
+
+LA API Y JSONBLOB
+La solución utiliza una API local real: una petición GET a api.php devuelve JSON.
+Esto permite enseñar y ejecutar la actividad sin depender de Internet.
+Si el profesor exige JSONBlob como servicio concreto:
+1. Copia el JSON que aparece después de ?> en api.php.
+2. Pégalo en https://jsonblob.com/ y guárdalo con tu cuenta.
+3. Copia la URL de consulta del blob y sustitúyela en URL_API en app.js.
+No pongas una clave privada dentro del JavaScript del navegador.
+Se ha optado por la API local porque JSONBlob solicita iniciar sesión para guardar.
+No se ha creado ningún recurso público en JSONBlob.
+
+CORRESPONDENCIA CON LA ACTIVIDAD
+- Clase Carrito y cálculos separados del DOM.
+- Tres métodos orientativos del enunciado implementados.
+- Creación dinámica del listado de productos.
+- Eventos de botones, cantidades, subtotales y total actualizados.
+- Creación de una API local y petición HTTP con fetch.
+- Maquetación básica de tabla y resumen.
+El diseño es funcional y no pretende reproducir exactamente las capturas.
+
+ENTREGA ACADÉMICA
+El enunciado también pide un enlace a un repositorio público de GitHub.
+Este paquete no publica nada en GitHub. Para entregar la actividad, sube estos
+archivos a tu repositorio y añade su URL junto al ZIP.
+
